@@ -1,66 +1,59 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart Clone - Online Shopping</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">Flipkart</a>
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for products, brands and more">
+    <header class="header">
+        <div class="container">
+            <div class="logo">Flipkart</div>
+            <div class="search-box">
+                <input type="text" placeholder="Search for products, brands">
                 <button><i class="fas fa-search"></i></button>
             </div>
-            <div class="nav-links">
-                <a href="login.html" class="nav-link">Login</a>
-                <a href="#" class="nav-link">More</a>
-                <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <div class="user-actions">
+                <a href="login.jsp">Login</a>
+                <a href="#">More <i class="fas fa-chevron-down"></i></a>
+                <a href="cart.jsp"><i class="fas fa-shopping-cart"></i> Cart</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="categories">
+        <div class="container">
+            <div class="category-item">
+                <i class="far fa-square"></i>
+                <span>Mobiles</span>
+            </div>
+            <div class="category-item">Fashion</div>
+            <div class="category-item">
+                <i class="far fa-square"></i>
+                <span>Electronics</span>
+            </div>
+            <div class="category-item">Home</div>
+            <div class="category-item">
+                <i class="far fa-square"></i>
+                <span>Appliances</span>
             </div>
         </div>
     </nav>
 
-    <!-- Categories Section -->
-    <div class="categories">
-        <div class="category">
-            <img src="images/mobiles.jpg" alt="Mobiles">
-            <p>Mobiles</p>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Deals of the Day</h2>
+            <div class="products-grid" id="products-container">
+                <!-- Products will be loaded via JavaScript -->
+            </div>
         </div>
-        <div class="category">
-            <img src="images/fashion.jpg" alt="Fashion">
-            <p>Fashion</p>
-        </div>
-        <div class="category">
-            <img src="images/electronics.jpg" alt="Electronics">
-            <p>Electronics</p>
-        </div>
-        <div class="category">
-            <img src="images/home.jpg" alt="Home">
-            <p>Home</p>
-        </div>
-        <div class="category">
-            <img src="images/appliances.jpg" alt="Appliances">
-            <p>Appliances</p>
-        </div>
-    </div>
+    </main>
 
-    <!-- Deals of the Day -->
-    <section class="deals-section">
-        <h2>Deals of the Day</h2>
-        <div class="products-container" id="deals-container">
-            <!-- Products will be loaded via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container">
             <div class="footer-section">
                 <h3>About</h3>
                 <ul>
@@ -82,7 +75,6 @@
                 <ul>
                     <li><a href="#">Return Policy</a></li>
                     <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Security</a></li>
                 </ul>
             </div>
         </div>
