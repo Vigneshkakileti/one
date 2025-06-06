@@ -1,4 +1,4 @@
-/* Global Styles */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -11,123 +11,115 @@ body {
     color: #212121;
 }
 
-/* Navigation Bar */
-.navbar {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles */
+.header {
     background-color: #2874f0;
     color: white;
-    padding: 10px 0;
+    padding: 12px 0;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.nav-container {
+.header .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: space-between;
 }
 
-.logo a {
-    color: white;
+.logo {
     font-size: 24px;
     font-weight: bold;
-    text-decoration: none;
     font-style: italic;
 }
 
-.search-bar {
+.search-box {
     display: flex;
     width: 50%;
 }
 
-.search-bar input {
+.search-box input {
     width: 100%;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     outline: none;
-    border-radius: 2px 0 0 2px;
+    font-size: 14px;
 }
 
-.search-bar button {
-    padding: 10px 15px;
+.search-box button {
+    padding: 0 15px;
     background: white;
     border: none;
-    border-radius: 0 2px 2px 0;
     cursor: pointer;
+    color: #2874f0;
 }
 
-.nav-links {
+.user-actions {
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
-.nav-link {
+.user-actions a {
     color: white;
     text-decoration: none;
     font-weight: 500;
 }
 
-/* Categories Section */
+/* Categories Navigation */
 .categories {
-    display: flex;
-    justify-content: space-around;
     background: white;
     padding: 15px 0;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
-    max-width: 1200px;
-    margin: 10px auto;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
-.category {
-    text-align: center;
+.categories .container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     cursor: pointer;
+    padding: 5px 10px;
 }
 
-.category img {
-    width: 64px;
-    height: 64px;
+/* Main Content */
+.main-content {
+    padding: 20px 0;
 }
 
-.category p {
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-/* Deals Section */
-.deals-section {
-    max-width: 1200px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
-}
-
-.deals-section h2 {
-    margin-bottom: 15px;
+.section-title {
+    margin-bottom: 20px;
+    color: #2874f0;
     font-size: 22px;
 }
 
-.products-container {
+.products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
 }
 
 .product-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
+    background: white;
     border-radius: 4px;
     padding: 15px;
-    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .product-image {
@@ -149,43 +141,20 @@ body {
 .product-price {
     font-weight: bold;
     color: #2874f0;
-    margin-bottom: 8px;
 }
 
-.product-rating {
-    background: #388e3c;
-    color: white;
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 12px;
-    display: inline-block;
-}
-
-.add-to-cart {
-    background: #ff9f00;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
-}
-
-/* Footer */
+/* Footer Styles */
 .footer {
     background: #172337;
     color: white;
     padding: 30px 0;
+    margin-top: 30px;
 }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
+.footer .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding: 0 20px;
 }
 
 .footer-section h3 {
@@ -198,7 +167,7 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .footer-section ul li a {
@@ -209,21 +178,21 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-container {
+    .header .container {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
     
-    .search-bar {
+    .search-box {
         width: 100%;
     }
     
-    .categories {
+    .categories .container {
         flex-wrap: wrap;
         gap: 10px;
     }
     
-    .category {
-        width: 20%;
+    .footer .container {
+        grid-template-columns: 1fr;
     }
 }
